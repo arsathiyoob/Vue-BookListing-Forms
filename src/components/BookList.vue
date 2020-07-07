@@ -28,6 +28,7 @@ export default {
     return {
       title: "All Books",
       filters: ["bought","borrowed"],
+      holding: 'bought',
       states: ["Want to Read", "Read", "Reading"],
       books: [
         { title: "Self-Reliance", author: "Ralph Waldo Emerson", finishedReading: true, ownership: "borrowed" },
@@ -40,13 +41,12 @@ export default {
     BookItem,
     BookForm
   },
-  holding: 'bought',
   filteredBooks() {
     return _.filter(this.books, ["ownership", this.holding]);
   },
   methods: {
     appendBook(bookData) {
-      this.books.push({ title: bookData.bookTitle, author: bookData.bookAuthor, finishedReading:bookData.finishedReading, ownership:bookDate.ownership });
+      this.books.push({ title: bookData.bookTitle, author: bookData.bookAuthor, finishedReading:bookData.finishedReading, ownership:bookData.ownership });
     }
   }
 };
