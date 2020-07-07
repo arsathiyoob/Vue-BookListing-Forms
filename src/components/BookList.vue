@@ -41,8 +41,10 @@ export default {
     BookItem,
     BookForm
   },
-  filteredBooks() {
+  computed: {
+   filteredBooks() {
     return _.filter(this.books, ["ownership", this.holding]);
+   }
   },
   methods: {
     appendBook(bookData) {
