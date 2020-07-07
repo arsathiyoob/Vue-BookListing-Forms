@@ -27,6 +27,7 @@ export default {
   data() {
     return {
       title: "All Books",
+      filters: ["bought","borrowed"],
       states: ["Want to Read", "Read", "Reading"],
       books: [
         { title: "Self-Reliance", author: "Ralph Waldo Emerson", finishedReading: true, ownership: "borrowed" },
@@ -34,12 +35,11 @@ export default {
         { title: "Amusing Ourselves to Death", author: "Neil Postman", finishedReading: true, ownership: "borrowed" }
       ]
     };
-  },
+    },
   components: {
     BookItem,
     BookForm
   },
-  filters: ["bought","borrowed"],
   holding: 'bought',
   filteredBooks() {
     return _.filter(this.books, ["ownership", this.holding]);
