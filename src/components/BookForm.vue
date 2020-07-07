@@ -2,6 +2,8 @@
   <form v-on:submit.prevent="bookSubmit(bookData)" class="" action="#" method="post">
     <input v-model="bookData.bookTitle" type="text" name="title" value="" placeholder="Book Title">
     <input v-model="bookData.bookAuthor" type="text" name="author" value="" placeholder="Book Author">
+    <span v-if=book.finishedReading is true>Read</span>
+    <span v-else>Not Read</span>
     <div>
     <input v-model="bookData.finishedReading" type="checkbox"><label for="finishedReading">Finished Reading</label>
     <input v-model="bookData.ownership" type="radio" value="borrowed"><label for="borrowed">Borrowed</label>
@@ -35,3 +37,4 @@ export default {
 
 <style>
 </style>
+
